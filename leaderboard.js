@@ -3,7 +3,7 @@
 const express = require('express');
 const router = express.Router();
 const { check, validationResult, sanitize } = require('express-validator');
-const { insert, select } = require('./db');
+const { insert, select, update } = require('./db');
 const xss = require('xss');
 
 
@@ -87,7 +87,7 @@ async function savescore(req, res){
   } else {
     try {
       if(score > 1){
-        await insert(name, score);
+        await update(name, score);
         score = 0;
       }
     } catch (e) {
