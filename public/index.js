@@ -1,10 +1,11 @@
+let mobile = false;
 window.onload=function() {
     canv = document.getElementById("gc");
     ctx = canv.getContext("2d");
     let inputtype = "keydown";
-    
     if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
         inputtype = 'touchstart';
+        mobile = true;
     }
     document.addEventListener(inputtype,keyPush);
     const startbtn = document.getElementById('startbtn');
@@ -228,18 +229,16 @@ function game() {
 }
 
 // Space
-function keyPush(evt) { 
-    switch(evt.keyCode) {
-        case 32:
-            fuglur.flap();
-            if(fuglur.dead) {
-                fuglur.v = -20;
-                fuglur.a = 1.5;
-                boxes = [];
-                fuglur.dead = false;
-                n = 1;
-                score = 0;
-            }
-        break;
+function keyPush(evt) {
+    if(evt.keyCode == 32 || mobile){
+        fuglur.flap();
+        if(fuglur.dead) {
+            fuglur.v = -20;
+            fuglur.a = 1.5;
+            boxes = [];
+            fuglur.dead = false;
+            n = 1;
+            score = 0;
+        }
     }
 }
