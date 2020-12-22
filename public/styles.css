@@ -78,6 +78,7 @@ li {
 .score {
 	width: 20%;
 	border: 1px solid black;
+	text-align: center;
 }
 
 a {
