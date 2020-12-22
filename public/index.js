@@ -3,6 +3,8 @@ window.onload=function() {
     ctx = canv.getContext("2d");
     document.addEventListener("keydown",keyPush);
     const startbtn = document.getElementById('startbtn');
+    const savebtn = document.getElementById('savescorebtn');
+    const soundbtn = document.getElementById('togglesound');
     let gamestarted = false;
     startbtn.addEventListener('click', () => {
         if(!gamestarted){
@@ -10,18 +12,23 @@ window.onload=function() {
             gamestarted = true;    
         }
     });
-    document.getElementById('togglesound').onclick = function() {
+    savebtn.addEventListener('click', () => {
+        if(highestscore > 0){
+            endgame();
+        }
+    });
+    soundbtn.addEventListener('click', () => {
         if(sound){
             sound = false;
         } else {
             sound = true;
         }
-    }
+    });
 }
 
 async function endgame() {
-    if(score > 0){
-    const data = { score };
+    if(highestscore > 0){
+    const data = { highestscore };
     const options = {
         method: 'POST',
         headers: {
@@ -30,9 +37,16 @@ async function endgame() {
         body: JSON.stringify(data),
     };
     await fetch('/endgame', options);
-    score = 0;
+    highestscore = 0;
     window.location.href = "/getname";
     }
+}
+
+async function capturescore(){
+    if(score > highestscore){
+        highestscore = score;
+    }
+    score = 0;
 }
 
 //Fuglurinn
@@ -48,7 +62,8 @@ function fuglur() {
         this.v = 0;
         this.a = 0;
         this.dead = true;
-        endgame();
+        fr = 0;
+        capturescore();
     }
     this.move = function() {
         this.y += this.v/15;
@@ -91,8 +106,10 @@ function fuglur() {
     this.flap = function() {
         this.v = -25;
         this.a = 1.5;
-        flapp.currentTime = 0; 
-        flapp.play();
+        flapp.currentTime = 0;
+        if( sound ) {
+            flapp.play();
+        }
     }
     this.start = function() { 
         this.y = 200;
@@ -130,6 +147,7 @@ function Box() {
 //Global variables
 let fr = 0;
 let score = 0;
+let highestscore = 0;
 let boxes = [];
 let sound = true;
 fuglur = new fuglur();
@@ -171,15 +189,19 @@ function game() {
         (fuglur.y > boxes[j].y - boxes[j].h1 || fuglur.y < boxes[j].h2)) {
             for (k = 0; k < boxes.length; k++){
                 boxes[k].v = 0;
-            } 
-            splatt.play(); 
+            }
+            if ( sound ) {
+                splatt.play();     
+            }
             fuglur.die();
             n = 0;
         } 
         if(fuglur.x == boxes[j].x+boxes[j].w/2){
             score += 1;
             stig.currentTime = 0; 
-            stig.play();
+            if( sound ) {
+                stig.play();
+            }
             console.log("here");
         }   
     }
@@ -195,8 +217,9 @@ function game() {
     fuglur.draw();  
     //Score
     ctx.fillStyle="black";
-    ctx.font = "30px Comic-Sans";
-    ctx.fillText("Score: "+ score ,270,380);
+    ctx.font = "28px Comic-Sans";
+    ctx.fillText("Score: "+ score ,250,380);
+    ctx.fillText("Highest: " + (highestscore > score ? highestscore : score), 250, 350);
 }
 
 // Space

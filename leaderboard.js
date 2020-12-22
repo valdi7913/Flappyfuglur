@@ -36,12 +36,12 @@ function catchErrors(fn) {
 }
 
 const validationscore = [
-  check('score').isNumeric(),
+  check('highestscore').isNumeric(),
 ];
 
 const sanitizationscore = [
-  sanitizeXss('score'),
-  sanitize('score')
+  sanitizeXss('highestscore'),
+  sanitize('highestscore')
     .trim().blacklist(' ').escape()
     .toInt(),
 ];
@@ -64,7 +64,7 @@ async function getname(req, res){
  		res.end();
  	} else {
  	  	try {
- 	   		score = req.body.score;
+ 	   		score = req.body.highestscore;
  	  	} catch (e) {
  	   		console.log('Score ekki rétt', e);
  	  	}

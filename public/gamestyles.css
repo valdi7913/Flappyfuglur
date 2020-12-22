@@ -23,6 +23,17 @@ a {
 }
 
 #togglesound {
-	width: 400px;
+	width: 200px;
 	margin: auto;
+	margin-bottom: 20px;
+}
+
+#savescorebtn {
+	width: 200px;
+	margin: auto;
+	margin-bottom: 20px;
+}
+
+button {
+	height: 40px;
 }
