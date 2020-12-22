@@ -29,7 +29,6 @@ a {
 }
 
 .disable-dbl-tap-zoom {
-	touch-action: manipulation;
 }
 
 #savescorebtn {
