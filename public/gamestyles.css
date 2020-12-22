@@ -1,0 +1,28 @@
+canvas {
+	margin: auto;
+}
+
+body {
+	display: flex;
+	flex-direction: column;
+}
+
+header {
+	text-align: center;
+}
+
+p {
+	text-align: center;
+}
+
+a {
+	margin: auto;
+    font-size: 25px;
+    text-decoration: none;
+    color: black;
+}
+
+#togglesound {
+	width: 400px;
+	margin: auto;
+}

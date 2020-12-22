@@ -1,0 +1,9 @@
+<%- include('header') -%>
+<h1>Leaderboard</h1>
+<ul>
+  		<% data.forEach((data) => { %>
+    	<li><div class="scorecontainer"><div class="name"><%= data.name %></div> <div class="score"><%=data.score %></div></div></li>
+  		<% }) %>
+</ul>
+<a href="/">Back</a>
+<%- include('footer') -%>

@@ -1,0 +1,32 @@
+{
+  "name": "flappyfuglur",
+  "version": "1.0.0",
+  "description": "* Hobby project til að læra að búa til tölvuleiki og vefforritun",
+  "main": "app.js",
+  "scripts": {
+    "dev": "nodemon app.js",
+    "setup": "node setup.js",
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/valdi7913/Flappyfuglur.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/valdi7913/Flappyfuglur/issues"
+  },
+  "homepage": "https://github.com/valdi7913/Flappyfuglur#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.6"
+  },
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "ejs": "^3.1.5",
+    "express": "^4.17.1",
+    "express-validator": "^6.8.1",
+    "pg": "^8.5.1",
+    "xss": "^1.0.8"
+  }
+}
