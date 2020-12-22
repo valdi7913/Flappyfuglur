@@ -1,7 +1,12 @@
 window.onload=function() {
     canv = document.getElementById("gc");
     ctx = canv.getContext("2d");
-    document.addEventListener("keydown",keyPush);
+    let inputtype = "keydown";
+    
+    if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+        inputtype = 'touchstart';
+    }
+    document.addEventListener(inputtype,keyPush);
     const startbtn = document.getElementById('startbtn');
     const savebtn = document.getElementById('savescorebtn');
     const soundbtn = document.getElementById('togglesound');
@@ -54,7 +59,7 @@ function fuglur() {
     this.dead = false;
     this.x = 100; 
     this.y = 200;
-    this.v = 5;
+    this.v = 1;
     this.w = 1;
     this.a = 1.5;
     this.r = 9;
