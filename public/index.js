@@ -82,8 +82,7 @@ function fuglur() {
         this.D = this.y - this.h*((this.r/Math.sqrt(1+this.h**2)));
                     
         if(this.y+this.r>400) {
-                this.v = 0;
-                this.a = 0;
+                this.flap();
             }
         }
     this.draw = function() {
