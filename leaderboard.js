@@ -101,6 +101,9 @@ async function showleaderboard(req, res){
 	let data;
 	await select().then((top) => {
 		data = top.rows;
+    for(let i = 0; i < data.length; i++){
+      data[i].place = (i + 1);
+    }
 	});
 	res.render('leaderboard', {title: 'Leaderboard', data});
 }
