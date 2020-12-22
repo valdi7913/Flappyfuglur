@@ -28,6 +28,10 @@ a {
 	margin-bottom: 20px;
 }
 
+.disable-dbl-tap-zoom {
+	touch-action: manipulation;
+}
+
 #savescorebtn {
 	width: 200px;
 	margin: auto;
