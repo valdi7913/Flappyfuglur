@@ -87,6 +87,7 @@ async function savescore(req, res){
   } else {
     try {
       if(score > 1){
+        console.log(name + " scored " + score);
         await update(name, score);
         score = 0;
       }
