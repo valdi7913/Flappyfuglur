@@ -1,7 +1,9 @@
 let mobile = false;
+
 window.onload=function() {
     canv = document.getElementById("gc");
     ctx = canv.getContext("2d");
+
     let inputtype = "keydown";
     if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
         inputtype = 'touchstart';
