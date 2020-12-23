@@ -10,9 +10,11 @@
     <body class="disable-dbl-tap-zoom">
         <header class="disable-dbl-tap-zoom">
             <h1 class="disable-dbl-tap-zoom" >Flappy Fuglur</h1>
-            <Button id ='togglesound'> Toggle sound on/off</Button>
-            <button id="startbtn">Press to start</button>
-            <button id="savescorebtn">Save score</button>
+            <div class="btncontainer">
+                <button id ='togglesound'><img id="muteimg" src="img/mute.svg"></button>
+                <button id="startbtn">Press to start</button>
+                <button id="savescorebtn">Save score</button>
+            </div>
         </header>
         <canvas class="disable-dbl-tap-zoom" id="gc"  width="400" height="400"></canvas>
         <script type="text/javascript" src="index.js"></script>

@@ -22,21 +22,46 @@ a {
     color: black;
 }
 
+.btncontainer {
+	height: 60px;
+    width: 400px;
+    display: flex;
+    margin: auto;
+    margin-bottom: 20px;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
 #togglesound {
-	width: 200px;
-	margin: auto;
-	margin-bottom: 20px;
+	width: 10%;
+	margin-top: auto;
+    margin-bottom: auto;
+	background: white;
 }
 
 .disable-dbl-tap-zoom {
 }
 
 #savescorebtn {
-	width: 200px;
-	margin: auto;
-	margin-bottom: 20px;
+	width: 60%;
+	margin-top: auto;
+    margin-bottom: auto;
+	background: white;
+}
+
+#startbtn {
+	width: 20%;
+	margin-top: auto;
+    margin-bottom: auto;
+	background: white;
 }
 
 button {
 	height: 40px;
+	border-radius: none;
+}
+
+#muteimg {
+	width: 100%;
+	height: 100%;
 }

@@ -13,6 +13,7 @@ window.onload=function() {
     const startbtn = document.getElementById('startbtn');
     const savebtn = document.getElementById('savescorebtn');
     const soundbtn = document.getElementById('togglesound');
+    const muteimg = document.getElementById('muteimg');
     let gamestarted = false;
     startbtn.addEventListener('click', () => {
         if(!gamestarted){
@@ -28,8 +29,10 @@ window.onload=function() {
     soundbtn.addEventListener('click', () => {
         if(sound){
             sound = false;
+            muteimg.src = 'img/unmute.svg';
         } else {
             sound = true;
+            muteimg.src = 'img/mute.svg';
         }
     });
 }
