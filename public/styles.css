@@ -80,18 +80,27 @@ li {
 .name {
 	width: 70%;
 	border: 1px solid black;
+	display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .score {
 	width: 20%;
 	border: 1px solid black;
 	text-align: center;
+	display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .place {
 	width: 10%;
 	border: 1px solid black;
 	text-align: center;
+	display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 a {
