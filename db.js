@@ -11,7 +11,7 @@ async function select(){
   	client.connect().catch( err => console.log(err) );
 
   try {
-    const query = 'SELECT * FROM scores ORDER BY score DESC LIMIT 10';
+    const query = 'SELECT * FROM scores ORDER BY score DESC LIMIT 20';
     const res = await client.query(query);
 	return res;
   } catch (err) {
