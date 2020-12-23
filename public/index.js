@@ -14,6 +14,13 @@ window.onload=function() {
     const savebtn = document.getElementById('savescorebtn');
     const soundbtn = document.getElementById('togglesound');
     const muteimg = document.getElementById('muteimg');
+    const leaderboardbtn = document.getElementById('leaderboardbtn');
+    const instructions = document.getElementById('instructions');
+
+    if(mobile){
+        instructions.textContent = 'Tap to flapp';
+    }
+
     let gamestarted = false;
     startbtn.addEventListener('click', () => {
         if(!gamestarted){
@@ -34,6 +41,9 @@ window.onload=function() {
             sound = true;
             muteimg.src = 'img/mute.svg';
         }
+    });
+    leaderboardbtn.addEventListener('click', () => {
+        window .location.href = '/leaderboard';
     });
 }
 
