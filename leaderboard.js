@@ -113,6 +113,5 @@ router.post('/endgame', validationscore, sanitizationscore, getname);
 router.get('/getname', name);
 router.get('/leaderboard', showleaderboard);
 router.post('/savescore', validationname, sanitizationname, savescore);
-router.get('/img/favicon.ico', (req, res) => res.status(204).end());
 
 module.exports = router;
