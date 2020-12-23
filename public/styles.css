@@ -83,6 +83,7 @@ li {
 	display: flex;
     flex-direction: column;
     justify-content: center;
+    overflow-wrap: break-word;
 }
 
 .score {
