@@ -36,10 +36,10 @@ window.onload=function() {
     soundbtn.addEventListener('click', () => {
         if(sound){
             sound = false;
-            muteimg.src = 'img/unmute.svg';
+            muteimg.src = './img/unmute.svg';
         } else {
             sound = true;
-            muteimg.src = 'img/mute.svg';
+            muteimg.src = './img/mute.svg';
         }
     });
     leaderboardbtn.addEventListener('click', () => {
